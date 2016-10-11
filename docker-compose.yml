@@ -1,0 +1,8 @@
+version: '2'
+services:
+ web:
+   build: .
+   ports:
+    - "6060:8080"
+   volumes:
+    - .:/go/src/ravikp/hello
