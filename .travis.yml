@@ -1,0 +1,15 @@
+sudo: required
+
+services:
+  - docker
+
+script:
+  - docker build -t ravikp/hellogolang:latest .
+  - docker build -t ravikp/hellogolang:"$BUILD_ID"."$TRAVIS_BUILD_NUMBER"
+
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+    docker push ravikp/hellogolang:latest;
+    docker push ravikp/hellogolang:"$BUILD_ID"."$TRAVIS_BUILD_NUMBER"
+    fi
