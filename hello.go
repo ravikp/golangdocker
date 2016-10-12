@@ -9,10 +9,6 @@ import (
 	"github.com/gorilla/mux"
 )
 
-func handler(response http.ResponseWriter, request *http.Request) {
-	// fmt.Fprintf(response, "%v", time.Now())
-}
-
 func Hello(w http.ResponseWriter, req *http.Request) {
 	fmt.Fprintln(w, "Hello world! time:", time.Now())
 }
