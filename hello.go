@@ -10,7 +10,7 @@ import (
 )
 
 func Hello(w http.ResponseWriter, req *http.Request) {
-	fmt.Fprintln(w, "Hello world! time:", time.Now())
+	fmt.Fprintln(w, "Fully-integrated-Hello world! time:", time.Now())
 }
 
 func main() {
