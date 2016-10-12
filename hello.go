@@ -10,17 +10,13 @@ import (
 )
 
 func Hello(w http.ResponseWriter, req *http.Request) {
-	fmt.Fprintln(w, "Fully-integrated-Hello world! time:", time.Now())
+	fmt.Fprintln(w, "Time now is:", time.Now())
 }
 
 func main() {
-	// http.HandleFunc("/", handler)
-	// http.ListenAndServe(":8080", nil)
-
 	r := mux.NewRouter()
 	r.HandleFunc("/", Hello)
 	http.Handle("/", r)
 	fmt.Println("Starting up on 8080")
 	log.Fatal(http.ListenAndServe(":8080", nil))
-
 }
