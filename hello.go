@@ -10,7 +10,7 @@ import (
 )
 
 func Hello(w http.ResponseWriter, req *http.Request) {
-	fmt.Fprintln(w, ">> Thanks for visiting this site. !@Indonesia! Time now is:", time.Now())
+	fmt.Fprintln(w, ">> Thanks for visiting this site. !Today is Batik! Time now is:", time.Now())
 }
 
 func main() {
